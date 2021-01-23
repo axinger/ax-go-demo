@@ -101,4 +101,6 @@ func main() {
 	/// new 很少用,基本数据类型申请内存
 	var aint *string = new(string)
 	fmt.Println(aint)
+
+
 }
