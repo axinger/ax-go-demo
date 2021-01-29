@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+	"unicode/utf8"
+)
 
 func main() {
 	//占位符
@@ -13,12 +17,23 @@ func main() {
 
 	*/
 
+	fmt.Println("字节长度 = ",len("汉字"))
+	fmt.Println("子串长度 要减 1= ",strings.Count("12","")-1)
+
+	fmt.Println("子串长度3 = ",utf8.RuneCountInString("汉字"))
+
 	var num = 3
 	//var num = true
 	// %T 查看类型
 	fmt.Printf("查看类型 %T \n",num)
 	// %v 查看值
 	fmt.Printf("查看值 %v \n",num)
+	map1 := make(map[string]interface{})
+	map1["name"] = "jim"
+	fmt.Printf("查看值#v %#v \n",map1)
+	fmt.Printf("查看值+v %+v \n",map1)
+	fmt.Printf("查看值v %v \n",map1)
+
 	fmt.Printf("查看值 %+v \n",num)
 
 	fmt.Println("Println查看值",num)
