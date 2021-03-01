@@ -1,6 +1,7 @@
 package main
 
 import (
+	"container/list"
 	"fmt"
 	"sort"
 )
@@ -103,4 +104,18 @@ func main() {
 	fmt.Println(aint)
 
 
+	list21 := list.New()
+	fmt.Println("list21 = ",list21)
+	list21.PushBack("A")
+	list21.PushBack("B")
+	fmt.Println("list21 = ",list21)
+
+
+	fmt.Printf("%v \n", list21)
+
+	fmt.Println("Front = ",list21.Front().Next())
+	for item := list21.Front(); item != nil; item = item.Next() {
+		fmt.Println("item = ",item.Value)
+		//fmt.Println(item.Value.([]byte))
+	}
 }
