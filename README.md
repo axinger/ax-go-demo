@@ -1,2 +1,0 @@
-# goDemo
-goland study
