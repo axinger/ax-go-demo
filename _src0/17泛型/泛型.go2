@@ -1,0 +1,49 @@
+package main
+
+import (
+	"fmt"
+)
+
+type Addable interface {
+	type int, int8, int16, int32, int64,
+		uint, uint8, uint16, uint32, uint64, uintptr,
+		float32, float64, complex64, complex128,
+		string
+}
+
+//func add[T Addable](a, b T) T {
+//	//return a + b
+//	return a
+//}
+
+func add[T any](a T, b T) T {
+	//return a + b
+	return a
+}
+
+func add2[T any](a T) {
+	fmt.Println("========= %v \n", a)
+
+	fmt.Println("查看值==========",a,"直接逗号拼接")
+	fmt.Printf("查看值v %v \n",a)
+}
+
+
+
+// https://www.jianshu.com/p/319a92afd6ad
+//go run -gcflags=-G=3 泛型.go
+func main() {
+
+
+
+	add[int](1,2)
+	add[string]("foo","bar")
+
+
+	//add(1,2)
+	//add("foo","bar")
+
+	add2[string]("a")
+
+
+}

@@ -1,11 +1,9 @@
 package main
 
 import (
-	"./action"
+	"axinger.xyz/ax_go_demo/web"
 )
 
 func main() {
-	action.Test("tom")
-	action.Test2("jim")
-
+	web.Web()
 }
