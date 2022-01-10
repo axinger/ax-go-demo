@@ -29,6 +29,9 @@ func main() {
 		h := gin.H{
 			"msg": "首页",
 			"title": "我是go web",
+			"list":gin.H{
+				"name":"jim",
+			},
 		}
 
 		c.HTML(http.StatusOK,"login.html",h)
