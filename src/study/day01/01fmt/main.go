@@ -22,4 +22,14 @@ func main() {
 	fmt.Println("e=", e)
 	fmt.Println("w=", w)
 
+	var name2 interface{} = nil
+
+	fmt.Println("name2 = ",name2)
+
+
+	var name3 string
+
+	//name3 = nil
+
+	fmt.Println("name3 = ",len(name3))
 }

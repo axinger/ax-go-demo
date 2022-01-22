@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5f2dea0a-8d27-47de-a51d-b1e5914b7d02" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/dto/login.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/gin_demo/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../src/study/day06/12read_file/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../src/study/day06/12read_file/application.properties" afterDir="false" />
+    <list default="true" id="5f2dea0a-8d27-47de-a51d-b1e5914b7d02" name="变更" comment="update…">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/config.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/mysql.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/study/day01/01fmt/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/../src/study/day01/01fmt/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/go.mod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/go.sum" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DockDockBuild.Settings">
+    <option name="codePath" value="$PROJECT_DIR$" />
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../SDK/go/go1.17.5" />
   <component name="Git.Settings">
@@ -24,7 +29,9 @@
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="23VEJVGUPFdZAmqyhMlG2lw4Qyx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,11 +47,12 @@
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.alibabacloud.intellij.config.HostTagConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/resources/templates" />
     </key>
   </component>
@@ -76,6 +84,9 @@
       <option name="presentableId" value="Default" />
       <updated>1641810782239</updated>
       <workItem from="1641810785577" duration="1249000" />
+      <workItem from="1642833562020" duration="683000" />
+      <workItem from="1642834263986" duration="116000" />
+      <workItem from="1642834416385" duration="3439000" />
     </task>
     <servers />
   </component>
@@ -92,6 +103,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

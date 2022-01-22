@@ -1,9 +1,10 @@
 package main
 
 import (
-	"axinger.xyz/ax-go-demo/web/dto"
+	"axinger.xyz/ax-go-demo/web/go/dto"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/spf13/viper"
 	"log"
 	"net/http"
 	"strconv"
@@ -15,11 +16,10 @@ func main() {
 	r := gin.Default()
 	// 注册一个全局中间件
 	r.Use(StatCost(), TokenHandler())
-	r.LoadHTMLGlob("./resources/templates/*")
+	r.LoadHTMLGlob("resources/templates/*")
 
 	//router.Static第一个参数为路由匹配地址，第二个参数为静态资源相对路径
 	r.Static("../static", "resources/static")
-
 
 	r.GET("/", func(c *gin.Context) {
 		//c.JSON(http.StatusOK, gin.H{
@@ -27,14 +27,14 @@ func main() {
 		//})
 
 		h := gin.H{
-			"msg": "首页",
+			"msg":   "首页",
 			"title": "我是go web",
-			"list":gin.H{
-				"name":"jim",
+			"list": gin.H{
+				"name": "jim",
 			},
 		}
 
-		c.HTML(http.StatusOK,"login.html",h)
+		c.HTML(http.StatusOK, "login.html", h)
 
 	})
 
@@ -147,8 +147,10 @@ func main() {
 		})
 	}
 
+	fmt.Println("run============================ conf = ", conf)
+	fmt.Println("run============================", fmt.Sprint(":", conf.Port))
 	// 前面要有 冒号 :
-	r.Run(":8080") // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+	r.Run(fmt.Sprint(":", conf.Port)) // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
 }
 
 // StatCost 是一个统计耗时请求耗时的中间件
@@ -204,4 +206,54 @@ func TokenHandler() gin.HandlerFunc {
 		cost := time.Since(start)
 		log.Println("cost:", cost)
 	}
+}
+
+type AppConfig struct {
+	AppName     string
+	Port        int
+	Description string
+}
+
+type MYSQLConfig struct {
+	AppName string
+	Port    int
+}
+
+var conf AppConfig
+
+var mysqlConfig MYSQLConfig
+
+// 初始化配置文件
+func init() {
+	//viper.SetConfigName("resources/config")
+	//viper.SetConfigType("yaml")
+	////viper.AddConfigPath("/etc/appname/") // 查找配置文件所在路径
+	////viper.AddConfigPath("$HOME/.appname") // 多次调用AddConfigPath，可以添加多个搜索路径
+	//viper.AddConfigPath(".") // 还可以在工作目录中搜索配置文件
+	//viper.AddConfigPath("./conf") // 还可以在工作目录中搜索配置文件
+
+	//viper.SetConfigFile("resources/config.yml")
+
+	viper.AddConfigPath("resources")
+	viper.SetConfigName("config")
+	viper.SetConfigType("yml")
+
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Printf("read config failed: %v \r", err)
+	}
+	if err := viper.Unmarshal(&conf); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("加载配置文件conf = ", conf)
+
+	viper.AddConfigPath("resources")
+	viper.SetConfigName("mysql")
+	viper.SetConfigType("yml")
+	if err := viper.ReadInConfig(); err != nil {
+		fmt.Printf("read config failed: %v \r", err)
+	}
+	if err := viper.Unmarshal(&mysqlConfig); err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("mysqlConfig = ", mysqlConfig)
 }
