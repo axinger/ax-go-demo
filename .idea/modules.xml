@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ax_go_demo.iml" filepath="$PROJECT_DIR$/.idea/ax_go_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ax-go-demo.iml" filepath="$PROJECT_DIR$/.idea/ax-go-demo.iml" />
     </modules>
   </component>
 </project>
